@@ -1,0 +1,37 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, Segoe UI, Arial, sans-serif;
+  background: #090e1d;
+  color: #f4f6ff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 0%, #1b2850 0, #090e1d 55%); }
+.wrap { width: min(1040px, calc(100% - 32px)); margin: 7vh auto 40px; }
+header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:22px; }
+.brand { font-size:32px; font-weight:800; letter-spacing:-1.5px; }
+.brand span { color:#7884ff; }
+.tag { color:#b8c5ff; font-size:14px; }
+.panel { border:1px solid #2a385d; border-radius:20px; background:#151f36; padding:20px; box-shadow:0 24px 80px #0005; }
+.join-row { display:flex; gap:10px; }
+input { min-width:0; flex:1; border:1px solid #34466f; background:#0c1428; color:white; border-radius:12px; padding:14px; font-size:15px; outline:none; }
+input:focus { border-color:#7884ff; }
+button { border:0; border-radius:12px; padding:13px 18px; color:white; font-weight:700; background:#5967ef; cursor:pointer; }
+button:hover { filter:brightness(1.12); }
+button:disabled { opacity:.45; cursor:not-allowed; }
+.hint, footer { color:#aab7df; font-size:13px; }
+.videos { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px; }
+.video-card { position:relative; aspect-ratio:16/9; overflow:hidden; border:1px solid #34466f; border-radius:15px; background:#070b15; display:grid; place-items:center; }
+video { width:100%; height:100%; object-fit:contain; }
+.video-label { position:absolute; left:12px; bottom:12px; z-index:2; background:#050812d9; border-radius:8px; padding:6px 9px; font-size:12px; }
+.empty { position:absolute; color:#7f8db5; font-size:13px; pointer-events:none; }
+.actions { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:16px; }
+.secondary { background:#34415f; }
+.danger { background:#a83d60; }
+.status { text-align:center; color:#c4ceef; min-height:20px; font-size:13px; }
+.tips { background:#0d162b; border:1px solid #29385d; border-radius:12px; padding:13px; color:#bac7ec; font-size:13px; line-height:1.55; }
+footer { text-align:center; margin:18px 0; }
+@media(max-width:700px) {
+  header { align-items:flex-start; flex-direction:column; }
+  .join-row { flex-direction:column; }
+  .videos { grid-template-columns:1fr; }
+}

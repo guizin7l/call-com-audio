@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Call — Tela com áudio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="brand">Call<span>.</span></div>
+      <div class="tag">Compartilhe sua tela com áudio</div>
+    </header>
+
+    <section class="panel">
+      <div class="join-row">
+        <input id="room" maxlength="50" placeholder="Código da sala (ex.: amigos123)" autocomplete="off">
+        <button id="joinBtn">Entrar e compartilhar</button>
+      </div>
+      <p class="hint">Crie um código e envie para a outra pessoa. Todos devem usar exatamente o mesmo código.</p>
+
+      <div class="videos">
+        <article class="video-card">
+          <video id="localVideo" autoplay muted playsinline></video>
+          <span class="video-label">Sua tela</span>
+          <span id="localEmpty" class="empty">Sua tela aparecerá aqui</span>
+        </article>
+        <article class="video-card">
+          <video id="remoteVideo" autoplay playsinline controls></video>
+          <span class="video-label">Tela recebida</span>
+          <span id="remoteEmpty" class="empty">A tela da outra pessoa aparecerá aqui</span>
+        </article>
+      </div>
+
+      <div class="actions">
+        <button id="audioBtn" class="secondary" disabled>Ativar áudio recebido</button>
+        <button id="leaveBtn" class="danger" disabled>Sair da sala</button>
+      </div>
+      <p id="status" class="status">Pronto para começar.</p>
+      <div class="tips">
+        <strong>Dica importante:</strong> no seletor de compartilhamento do Chrome, escolha uma aba e marque
+        <strong>Compartilhar áudio da guia</strong>. Para compartilhar o som do computador inteiro, escolha
+        a tela inteira e marque <strong>Compartilhar áudio do sistema</strong>, se essa opção aparecer.
+      </div>
+    </section>
+    <footer>Use Chrome ou Edge no computador. O navegador só transmite o áudio se você autorizar no seletor de tela.</footer>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
